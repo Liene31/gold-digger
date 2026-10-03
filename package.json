@@ -1,0 +1,21 @@
+{
+  "name": "gold-digger",
+  "version": "1.0.0",
+  "description": "Gold Digger - trade gold",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch --watch-preserve-output server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liene31/gold-digger.git"
+  },
+  "author": "Liene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Liene31/gold-digger/issues"
+  },
+  "homepage": "https://github.com/Liene31/gold-digger#readme"
+}
