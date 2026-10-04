@@ -7,7 +7,16 @@ function getRandomPrice(min, max) {
 
 function displayRandomPrice() {
   priceDisplaySpan.textContent = getRandomPrice(3000, 3250).toFixed(2);
-  console.log("test");
+}
+
+async function fetchPrices() {
+  try {
+    const price = await fetch("/api");
+    const response = await price.json();
+    console.log(response);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 investNowBtn.addEventListener("click", () => {
@@ -20,6 +29,8 @@ function setIntervalAndExecute(fn, time) {
 }
 
 setIntervalAndExecute(displayRandomPrice, 3000);
+
+fetchPrices();
 
 // 1. Clear the interval when the app is stopped
 // 2. Generate the price in backend, and frontend request it
