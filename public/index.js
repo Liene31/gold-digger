@@ -1,21 +1,19 @@
 const priceDisplaySpan = document.getElementById("price-display");
 const investNowBtn = document.getElementById("invest-btn");
+const connectionStatusPara = document.getElementById("connection-status");
 
-function getRandomPrice(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-function displayRandomPrice() {
-  priceDisplaySpan.textContent = getRandomPrice(3000, 3250).toFixed(2);
+function displayRandomPrice(price) {
+  priceDisplaySpan.textContent = price;
 }
 
 async function fetchPrices() {
   try {
     const price = await fetch("/api");
     const response = await price.json();
-    console.log(response);
+    displayRandomPrice(response);
   } catch (err) {
-    console.log(err);
+    priceDisplaySpan.textContent = "----.--";
+    connectionStatusPara.textContent = "Disconnected 🔴";
   }
 }
 
@@ -28,10 +26,6 @@ function setIntervalAndExecute(fn, time) {
   return setInterval(fn, time);
 }
 
-setIntervalAndExecute(displayRandomPrice, 3000);
-
-fetchPrices();
+setIntervalAndExecute(fetchPrices, 3000);
 
 // 1. Clear the interval when the app is stopped
-// 2. Generate the price in backend, and frontend request it
-// so there is continuous communication with front - back
