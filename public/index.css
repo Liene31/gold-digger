@@ -25,6 +25,7 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1em;
 }
 
@@ -97,7 +98,7 @@ label {
   font-size: 14px;
   top: -7px;
   left: 30px;
-  z-index: 1;
+  /* z-index: 1; */
   background-color: var(--brown);
   padding: 0 0.2em;
 }
@@ -152,6 +153,7 @@ input::placeholder {
 }
 
 dialog {
+  /* display: block; */
   max-width: 280px;
   border-radius: 10px;
   border: 2px solid var(--dark-gold);
@@ -193,7 +195,9 @@ dialog button:focus {
 .invest-btn,
 dialog button {
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 ::backdrop {
