@@ -1,3 +1,4 @@
+import { addTransactionLog } from "../utils/addTransactionLog.js";
 import { getGoldPrices } from "../utils/getGoldPrice.js";
 import { parseJSONBody } from "../utils/parseJSONBody.js";
 import { sendResponse } from "../utils/sendResponse.js";
@@ -9,5 +10,6 @@ export function handleGet(res) {
 
 export async function handlePost(req, res) {
   const parsedData = await parseJSONBody(req);
+  addTransactionLog(parsedData);
   return sendResponse(res, 201, "application/json", JSON.stringify(parsedData));
 }

@@ -1,0 +1,16 @@
+{
+  "amountPaid": "5000",
+  "pricePerOz": "3133.90",
+  "date": "2026-10-06T14:38:38.300Z",
+  "goldSold": "1.60"
+}{
+  "amountPaid": "40000",
+  "pricePerOz": "3160.87",
+  "date": "2026-10-06T14:42:44.481Z",
+  "goldSold": "12.65"
+}{
+  "amountPaid": "1000",
+  "pricePerOz": "3033.46",
+  "date": "2026-10-06T14:43:08.997Z",
+  "goldSold": "0.33"
+}
