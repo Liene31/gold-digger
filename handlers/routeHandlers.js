@@ -9,6 +9,5 @@ export function handleGet(res) {
 
 export async function handlePost(req, res) {
   const parsedData = await parseJSONBody(req);
-  console.log(parsedData);
   return sendResponse(res, 201, "application/json", JSON.stringify(parsedData));
 }

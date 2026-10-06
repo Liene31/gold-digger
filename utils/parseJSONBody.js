@@ -8,5 +8,7 @@ export async function parseJSONBody(req) {
 
     const parsedBody = JSON.parse(body);
     return parsedBody;
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 }
